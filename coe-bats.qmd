@@ -1,0 +1,44 @@
+---
+title: "coe-bats"
+format: html
+editor: visual
+---
+
+## Quarto
+
+```{r}
+
+library(sf)
+library(tidyverse)
+library(leaflet)
+
+
+neigh <- read_sf("./coe-nbh/coe-nbh.shp")
+neigh <- st_transform(neigh, crs = 4326)
+
+pal <- colorFactor(palette = "Set3", domain = neigh$civic_ward)
+
+leaflet(neigh) |>
+  addTiles() |>
+  addPolygons(
+    fillColor  = ~pal(civic_ward),
+    fillOpacity = 0.7,
+    color      = "white",
+    weight     = 1.5,
+    opacity    = 1,
+    highlightOptions = highlightOptions(
+      weight      = 3,
+      color       = "#e63946",
+      fillOpacity = 0.9,
+      bringToFront = TRUE
+    ),
+    label = ~name
+  ) |>
+  addLegend(
+    pal    = pal,
+    values = ~civic_ward,
+    title  = "Civic Ward",
+    position = "bottomright"
+  )
+
+```
