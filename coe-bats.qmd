@@ -1,12 +1,19 @@
 ---
-title: "coe-bats"
+title: "City of Edmonton Bats"
 format: html
 editor: visual
 ---
 
-## Quarto
+## Introduction
+
+## Methods
 
 ```{r}
+#| include: true
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
 
 library(sf)
 library(tidyverse)
@@ -37,7 +44,6 @@ leaflet(neigh) |>
   addLegend(
     pal    = pal,
     values = ~civic_ward,
-    title  = "Civic Ward",
     position = "bottomright"
   )
 
