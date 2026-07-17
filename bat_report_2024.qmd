@@ -13,7 +13,7 @@ theme: cosmo
 page-layout: article
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 author: 
-  - name: "Martin Hinojosa"
+  - name: "Martin Hinojosa Reyes"
     affiliation:
       - "Biodiversity Pathways Ltd."
   - name: "Cami Hurtado"
