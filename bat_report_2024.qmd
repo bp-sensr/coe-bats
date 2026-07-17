@@ -42,10 +42,8 @@ library(htmlwidgets)
 library(htmltools)
 library(base64enc)
 
-dir.create("bat_outputs", showWarnings = FALSE)
-dir.create("bat_outputs/figures", recursive = TRUE, showWarnings = FALSE)
-
-save.image("coe-bats.RData")
+load("coe-bats.RData")
+#save.image("coe-bats.RData")
 ```
 
 ## Executive Summary
