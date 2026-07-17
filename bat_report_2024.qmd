@@ -22,6 +22,7 @@ author:
 editor: visual
 nocite: '@*'
 toc: true
+lightbox: true
 toc-depth: 3
 bibliography: references.bib
 toc-expand: true
@@ -75,6 +76,7 @@ Urban bats may be affected by changes in habitat availability, loss of mature tr
 ```{r}
 #| label: helper-functions
 #| include: false
+#| eval: false
 
 first_text <- function(x) {
   x <- as.character(x)

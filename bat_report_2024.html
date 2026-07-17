@@ -58,6 +58,9 @@ div.csl-indent {
 <script src="bat_report_2024_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="bat_report_2024_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="bat_report_2024_files/libs/bootstrap/bootstrap-d9ee3e7c13397ee64e8144b167ea800e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="bat_report_2024_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="bat_report_2024_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="bat_report_2024_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="bat_report_2024_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="bat_report_2024_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="bat_report_2024_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -191,7 +194,7 @@ div.csl-indent {
 <div id="fig-species" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="bat_report_2024_files/figure-html/fig-species-1.png" class="img-fluid figure-img" width="768">
+<a href="bat_report_2024_files/figure-html/fig-species-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Number of processed bat detections by species or acoustic identification group. Bars represent the total number of detections."><img src="bat_report_2024_files/figure-html/fig-species-1.png" class="img-fluid figure-img" width="768"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Number of processed bat detections by species or acoustic identification group. Bars represent the total number of detections.
@@ -207,7 +210,7 @@ Figure&nbsp;1: Number of processed bat detections by species or acoustic identif
 <div id="fig-sites" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="bat_report_2024_files/figure-html/fig-sites-1.png" class="img-fluid figure-img" width="768">
+<a href="bat_report_2024_files/figure-html/fig-sites-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Nightly variation in bat detections among the 15 monitoring sites with the highest overall activity. Boxes summarize the distribution across nights, while points represent individual nights."><img src="bat_report_2024_files/figure-html/fig-sites-1.png" class="img-fluid figure-img" width="768"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Nightly variation in bat detections among the 15 monitoring sites with the highest overall activity. Boxes summarize the distribution across nights, while points represent individual nights.
@@ -222,7 +225,7 @@ Figure&nbsp;2: Nightly variation in bat detections among the 15 monitoring sites
 <div id="fig-night-species" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-night-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="bat_report_2024_files/figure-html/fig-night-species-1.png" class="img-fluid figure-img" width="960">
+<a href="bat_report_2024_files/figure-html/fig-night-species-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Hourly bat activity patterns by species between 20:00 and 06:00. Each panel shows the number of detections recorded by hour for each species."><img src="bat_report_2024_files/figure-html/fig-night-species-1.png" class="img-fluid figure-img" width="960"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-night-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Hourly bat activity patterns by species between 20:00 and 06:00. Each panel shows the number of detections recorded by hour for each species.
@@ -645,6 +648,38 @@ Kunz, Thomas H., Elizabeth Braun de Torrez, Dana Bauer, Tatyana Lobova, and Theo
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
