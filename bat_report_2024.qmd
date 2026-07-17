@@ -47,17 +47,16 @@ load("coe-bats.RData")
 #save.image("coe-bats.RData")
 ```
 
-![Bat in an urban environment. Photo: U.S. Fish and Wildlife Service.](usfws_bat.jpg){width=100%}
+![Bat in an urban environment. Photo: U.S. Fish and Wildlife Service.](usfws_bat.jpg){width="100%"}
 
 ## Executive Summary
+
 SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data previously collected in Edmonton. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
 
-::: {layout-ncol=2}
+::: {layout-ncol="2"}
+![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
 
-![](<SENSR_Logo_Left_Tagline_Full Colour.png>){width=70% fig-align="center"}
-
-![](BP-Logo-Hz-invert-notag.png){width=70% fig-align="center"}
-
+![](BP-Logo-Hz-invert-notag.png){width="70%" fig-align="center"}
 :::
 
 ## Land Acknowledgement
@@ -312,27 +311,364 @@ A total of 35,612 bat detections were recorded across 35 monitoring locations in
 #| message: false
 #| echo: false
 
-# Species breakdown for popup
-species_breakdown_tbl <- bat_site %>%
-  filter(species_confidence == "Species-level ID") %>%
-  count(location, species_clean, name = "n", sort = TRUE) %>%
-  group_by(location) %>%
+
+
+bat_map_data <- bat_site %>%
   mutate(
-    percent = round(n / sum(n) * 100, 1),
-    line = paste0(species_clean, ": ", comma(n), " (", percent, "%)")
-  ) %>%
-  summarise(
-    species_breakdown = paste(line, collapse = "<br>"),
-    .groups = "drop"
+    table_category = case_when(
+
+      species_confidence == "Species-level ID" ~ species_code,
+
+      species_code %in% c(
+        "HighF",
+        "LASBORMYOEVO"
+      ) ~ "High Frequency",
+
+      species_code %in% c(
+        "LowF",
+        "EPTFUSLASNOC",
+        "LASCINLASNOC"
+      ) ~ "Low Frequency",
+
+      species_code %in% c(
+        "40kMyo",
+        "MYOLUCMYOVOL",
+        "MYOCILMYOVOL",
+        "MYOSEPMYOVOL",
+        "MYOEVOMYOVOL"
+      ) ~ "40K MYO",
+
+      species_code == "UBAT" ~ "NoID",
+
+      TRUE ~ species_code
+    )
   )
 
-# Base map data
-map_points_original <- site_results_sf %>%
+muted_species_palette <- c(
+  "Big brown bat" = "#8C6D62",
+  "Silver-haired bat" = "#708A8A",
+  "Hoary bat" = "#A48B78",
+  "Eastern red bat" = "#B56F69",
+
+  "Little brown bat" = "#7A8062",
+  "Little brown myotis" = "#7A8062",
+
+  "Long-legged myotis" = "#7187A6",
+
+  "Northern long-eared bat" = "#9A7B92",
+  "Northern long-eared myotis" = "#9A7B92",
+
+  "Long-eared bat" = "#B29A68",
+  "Long-eared myotis" = "#B29A68",
+
+  "Western small-footed myotis" = "#77947D"
+)
+
+plot_to_base64 <- function(
+    plot,
+    width = 720,
+    height = 430,
+    res = 110
+) {
+
+  temporary_file <- tempfile(fileext = ".png")
+
+  png(
+    filename = temporary_file,
+    width = width,
+    height = height,
+    res = res
+  )
+
+  print(plot)
+  dev.off()
+
+  encoded_image <- base64enc::dataURI(
+    file = temporary_file,
+    mime = "image/png"
+  )
+
+  unlink(temporary_file)
+
+  paste0(
+    "<img src='",
+    encoded_image,
+    "' style='width:100%; height:auto;'>"
+  )
+}
+
+create_site_popup <- function(site_code) {
+
+  site_data <- bat_map_data %>%
+    filter(location == site_code)
+
+  site_information <- site_results_sf %>%
+    st_drop_geometry() %>%
+    filter(Location == site_code) %>%
+    slice(1)
+
+  popup_id <- str_replace_all(
+    site_code,
+    "[^A-Za-z0-9]",
+    ""
+  )
+
+  species_table <- site_data %>%
+    count(
+      table_category,
+      name = "detections"
+    )
+
+  group_categories <- c(
+    "High Frequency",
+    "Low Frequency",
+    "40K MYO",
+    "NoID"
+  )
+
+  species_categories <- species_table %>%
+    filter(!table_category %in% group_categories) %>%
+    arrange(table_category)
+
+  acoustic_groups <- species_table %>%
+    filter(table_category %in% group_categories) %>%
+    mutate(
+      table_category = factor(
+        table_category,
+        levels = group_categories
+      )
+    ) %>%
+    arrange(table_category) %>%
+    mutate(
+      table_category = as.character(table_category)
+    )
+
+  species_table <- bind_rows(
+    species_categories,
+    acoustic_groups
+  )
+
+  total_bats <- nrow(site_data)
+
+  species_table <- bind_rows(
+    species_table,
+    tibble(
+      table_category = "Total bats",
+      detections = total_bats
+    )
+  )
+
+  table_rows <- paste0(
+    "<tr>",
+    "<td>",
+    htmlEscape(species_table$table_category),
+    "</td>",
+    "<td class='number-cell'>",
+    comma(species_table$detections),
+    "</td>",
+    "</tr>",
+    collapse = ""
+  )
+
+  table_html <- paste0(
+    "<table class='species-table'>",
+    "<thead>",
+    "<tr>",
+    "<th>Species code</th>",
+    "<th class='number-cell'>Detections</th>",
+    "</tr>",
+    "</thead>",
+    "<tbody>",
+    table_rows,
+    "</tbody>",
+    "</table>"
+  )
+
+  site_time <- site_data %>%
+    count(
+      night,
+      name = "detections"
+    ) %>%
+    complete(
+      night = seq(
+        min(night, na.rm = TRUE),
+        max(night, na.rm = TRUE),
+        by = "day"
+      ),
+      fill = list(detections = 0)
+    )
+
+  time_plot <- ggplot(
+    site_time,
+    aes(
+      x = night,
+      y = detections
+    )
+  ) +
+    geom_col() +
+    scale_y_continuous(
+      labels = comma,
+      expand = expansion(
+        mult = c(0, 0.08)
+      )
+    ) +
+    labs(
+      x = "Night",
+      y = "Number of detections"
+    ) +
+    theme_bw(base_size = 11) +
+    theme(
+      panel.grid.minor = element_blank(),
+      axis.text.x = element_text(
+        angle = 45,
+        hjust = 1
+      )
+    )
+
+  time_plot_html <- plot_to_base64(
+    time_plot,
+    width = 720,
+    height = 430
+  )
+
+  species_composition <- site_data %>%
+    filter(
+      species_confidence == "Species-level ID"
+    ) %>%
+    count(
+      species_clean,
+      name = "detections"
+    ) %>%
+    mutate(
+      percent = round(detections / sum(detections) * 100, 1),
+      legend_label = paste0(species_clean, " (", percent, "%)")
+    ) %>%
+    arrange(desc(detections))
+
+  if (nrow(species_composition) > 0) {
+
+    pie_colors_site <- muted_species_palette[species_composition$species_clean]
+    names(pie_colors_site) <- species_composition$legend_label
+
+    pie_plot <- ggplot(
+      species_composition,
+      aes(
+        x = "",
+        y = detections,
+        fill = legend_label
+      )
+    ) +
+      geom_col(
+        width = 1,
+        color = "white",
+        linewidth = 0.25
+      ) +
+      coord_polar(theta = "y") +
+      scale_fill_manual(
+        values = pie_colors_site
+      ) +
+      labs(
+        fill = "Species"
+      ) +
+      theme_void(base_size = 11) +
+      theme(
+        legend.position = "right",
+        legend.title = element_text(
+          face = "bold"
+        ),
+        legend.text = element_text(
+          size = 9
+        )
+      )
+
+    pie_plot_html <- plot_to_base64(
+      pie_plot,
+      width = 780,
+      height = 470
+    )
+
+  } else {
+
+    pie_plot_html <- paste0(
+      "<p>No species-level detections were available ",
+      "for this monitoring location.</p>"
+    )
+  }
+
+  site_name_html <- if (
+    is.na(site_information$BAT) ||
+    site_information$BAT == ""
+  ) {
+
+    ""
+
+  } else {
+
+    paste0(
+      "<div class='site-name'>",
+      htmlEscape(site_information$BAT),
+      "</div>"
+    )
+  }
+
+  paste0(
+    "<div class='site-popup'>",
+
+    "<h3>",
+    htmlEscape(site_code),
+    "</h3>",
+
+    site_name_html,
+
+    "<div class='tab-buttons'>",
+
+    "<button class='tab-button active' ",
+    "onclick=\"openBatTab(event, 'table-",
+    popup_id,
+    "')\">",
+    "Species table",
+    "</button>",
+
+    "<button class='tab-button' ",
+    "onclick=\"openBatTab(event, 'time-",
+    popup_id,
+    "')\">",
+    "Detections over time",
+    "</button>",
+
+    "<button class='tab-button' ",
+    "onclick=\"openBatTab(event, 'pie-",
+    popup_id,
+    "')\">",
+    "Species composition",
+    "</button>",
+
+    "</div>",
+
+    "<div id='table-",
+    popup_id,
+    "' class='bat-tab-content' style='display:block;'>",
+    table_html,
+    "</div>",
+
+    "<div id='time-",
+    popup_id,
+    "' class='bat-tab-content'>",
+    time_plot_html,
+    "</div>",
+
+    "<div id='pie-",
+    popup_id,
+    "' class='bat-tab-content'>",
+    pie_plot_html,
+    "</div>",
+
+    "</div>"
+  )
+}
+
+map_sites <- site_results_sf %>%
   filter(!is.na(detections)) %>%
-  left_join(
-    species_breakdown_tbl,
-    by = c("Location" = "location")
-  ) %>%
   mutate(
     activity_class = case_when(
       detections <= 250 ~ "≤ 250",
@@ -341,6 +677,7 @@ map_points_original <- site_results_sf %>%
       detections <= 2000 ~ "1,001–2,000",
       TRUE ~ "> 2,000"
     ),
+
     marker_radius = case_when(
       activity_class == "≤ 250" ~ 4,
       activity_class == "251–500" ~ 6,
@@ -350,128 +687,246 @@ map_points_original <- site_results_sf %>%
     )
   )
 
-# 150 m privacy buffers around true monitoring locations
-map_buffers <- map_points_original %>%
-  st_transform(26912) %>%
-  st_buffer(dist = 150) %>%
-  st_transform(4326)
-
-# Create displaced approximate marker locations within 150 m
-# This keeps marker size for activity but avoids showing exact coordinates.
-set.seed(123)
-
-map_points_utm <- map_points_original %>%
-  st_transform(26912)
-
-coords <- st_coordinates(map_points_utm)
-
-random_angle <- runif(nrow(map_points_utm), 0, 2 * pi)
-random_distance <- sqrt(runif(nrow(map_points_utm))) * 150
-
-coords_private <- coords
-coords_private[, 1] <- coords[, 1] + cos(random_angle) * random_distance
-coords_private[, 2] <- coords[, 2] + sin(random_angle) * random_distance
-
-map_points_private <- map_points_utm
-st_geometry(map_points_private) <- st_sfc(
-  lapply(
-    seq_len(nrow(coords_private)),
-    function(i) st_point(coords_private[i, ])
-  ),
-  crs = 26912
+map_sites$popup_html <- map_chr(
+  map_sites$Location,
+  create_site_popup
 )
 
-map_points_private <- map_points_private %>%
-  st_transform(4326)
-
-# Colour palette for species richness
 richness_pal <- colorNumeric(
   palette = "YlGnBu",
-  domain = map_points_private$species_richness,
+  domain = map_sites$species_richness,
   na.color = "gray70"
 )
 
-# Simple size legend
 size_legend_html <- "
-<div style='background: white; padding: 10px 12px; border: 1px solid #bbb; border-radius: 4px; line-height: 1.2;'>
-  <b>Activity</b><br>
-  <span style='font-size:11px;'>Total detections</span><br><br>
+<div class='map-size-legend'>
 
-  <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
-    <span style='display:inline-block; width:8px; height:8px; border-radius:50%; background:#999; border:1px solid #333;'></span>
+  <b>Activity</b><br>
+  <span>Total detections</span>
+
+  <div class='size-row'>
+    <span class='circle c4'></span>
     <span>≤ 250</span>
   </div>
 
-  <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
-    <span style='display:inline-block; width:12px; height:12px; border-radius:50%; background:#999; border:1px solid #333;'></span>
+  <div class='size-row'>
+    <span class='circle c6'></span>
     <span>251–500</span>
   </div>
 
-  <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
-    <span style='display:inline-block; width:16px; height:16px; border-radius:50%; background:#999; border:1px solid #333;'></span>
+  <div class='size-row'>
+    <span class='circle c8'></span>
     <span>501–1,000</span>
   </div>
 
-  <div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>
-    <span style='display:inline-block; width:20px; height:20px; border-radius:50%; background:#999; border:1px solid #333;'></span>
+  <div class='size-row'>
+    <span class='circle c10'></span>
     <span>1,001–2,000</span>
   </div>
 
-  <div style='display:flex; align-items:center; gap:10px;'>
-    <span style='display:inline-block; width:24px; height:24px; border-radius:50%; background:#999; border:1px solid #333;'></span>
-    <span>> 2,000</span>
+  <div class='size-row'>
+    <span class='circle c12'></span>
+    <span>&gt; 2,000</span>
   </div>
+
 </div>
 "
 
-leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
-  # Privacy buffer
-  addPolygons(
-    data = map_buffers,
-    color = "gray40",
-    fillColor = "gray70",
-    stroke = TRUE,
-    weight = 1,
-    fillOpacity = 0.18,
-    popup = ~paste0(
-      "<b>", Location, "</b><br>",
-      "Approximate monitoring area: 150 m buffer"
+popup_css <- "
+.site-popup {
+  width: 600px;
+  max-width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.site-popup h3 {
+  margin: 0 0 3px 0;
+  font-size: 18px;
+}
+
+.site-name {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+.tab-button {
+  background: #f3f3f3;
+  border: none;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tab-button:hover {
+  background: #e3e3e3;
+}
+
+.tab-button.active {
+  background: #555;
+  color: white;
+}
+
+.bat-tab-content {
+  display: none;
+  max-height: 430px;
+  overflow-y: auto;
+}
+
+.species-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.species-table th,
+.species-table td {
+  padding: 7px 9px;
+  border-bottom: 1px solid #ddd;
+}
+
+.species-table th {
+  background: #f3f3f3;
+  text-align: left;
+}
+
+.species-table .number-cell {
+  text-align: right;
+}
+
+.species-table tbody tr:last-child {
+  font-weight: bold;
+  border-top: 2px solid #777;
+}
+
+.map-size-legend {
+  background: white;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.map-size-legend > span {
+  font-size: 11px;
+}
+
+.size-row {
+  display: flex;
+  align-items: center;
+  height: 31px;
+  gap: 10px;
+}
+
+.circle {
+  display: inline-block;
+  border-radius: 50%;
+  background: #999;
+  border: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.c4 {
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+}
+
+.c6 {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+}
+
+.c8 {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+.c10 {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+"
+
+tab_javascript <- "
+window.openBatTab = function(evt, tabId) {
+
+  var popup = evt.target.closest('.site-popup');
+
+  var contents =
+    popup.getElementsByClassName('bat-tab-content');
+
+  var buttons =
+    popup.getElementsByClassName('tab-button');
+
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].style.display = 'none';
+  }
+
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].classList.remove('active');
+  }
+
+  popup.querySelector('#' + tabId).style.display = 'block';
+  evt.currentTarget.classList.add('active');
+};
+"
+
+site_popups <- lapply(
+  map_sites$popup_html,
+  htmltools::HTML
+)
+
+bat_map <- leaflet(
+  map_sites,
+  width = "100%",
+  height = 650,
+  options = leafletOptions(
+    minZoom = 9
+  )
+) %>%
+
+  addProviderTiles(
+    providers$CartoDB.Positron,
+    options = providerTileOptions(
+      noWrap = TRUE
     )
   ) %>%
-  # Displaced activity marker
+
   addCircleMarkers(
-    data = map_points_private,
     radius = ~marker_radius,
     color = ~richness_pal(species_richness),
     fillColor = ~richness_pal(species_richness),
     stroke = TRUE,
     weight = 1,
     fillOpacity = 0.85,
-    popup = ~paste0(
-      "<b>", Location, "</b><br>",
-      "Site name: ", ifelse(is.na(BAT) | BAT == "", "Not available", BAT), "<br>",
-      "Location shown approximately within 150 m of true site", "<br><br>",
-      "<b>Summary</b><br>",
-      "Total detections: ", comma(detections), "<br>",
-      "Species-level detections: ", comma(species_level_detections), "<br>",
-      "Ambiguous detections: ", comma(ambiguous_detections), "<br>",
-      "Unidentified detections: ", comma(unidentified_detections), "<br>",
-      "Species richness: ", species_richness, "<br>",
-      "Nights with detections: ", nights_with_detections, "<br>",
-      "Detections per night: ", detections_per_night, "<br>",
-      "First detection: ", as.character(first_detection), "<br>",
-      "Last detection: ", as.character(last_detection), "<br><br>",
-      "<b>Species breakdown</b><br>",
-      ifelse(is.na(species_breakdown), "Not available", species_breakdown)
-    ),
-    popupOptions = popupOptions(maxWidth = 450)
+
+    popup = site_popups,
+
+    popupOptions = popupOptions(
+      maxWidth = 650,
+      minWidth = 520,
+      maxHeight = 600,
+      autoPan = TRUE
+    )
   ) %>%
 
   addLegend(
     position = "bottomright",
     pal = richness_pal,
-    values = map_points_private$species_richness,
+    values = ~species_richness,
     title = "Species richness",
     opacity = 0.85
   ) %>%
@@ -479,7 +934,18 @@ leaflet() %>%
   addControl(
     html = HTML(size_legend_html),
     position = "bottomleft"
+  ) %>%
+
+  htmlwidgets::prependContent(
+    tags$style(
+      HTML(popup_css)
+    ),
+    tags$script(
+      HTML(tab_javascript)
+    )
   )
+
+bat_map
 ```
 
 A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (Figure 1).
