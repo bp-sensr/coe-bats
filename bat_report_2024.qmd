@@ -51,12 +51,12 @@ load("coe-bats.RData")
 
 ## Executive Summary
 
-SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data previously collected in Edmonton. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
+SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne and Dr. Matina Kalcounis-Rueppell from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data collected in Edmonton in the summer of 2024. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
 
 ::: {layout-ncol="2"}
 ![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
 
-![](BP-Logo-Hz-invert-notag.png){width="70%" fig-align="center"}
+![](BP-Logo-Hz-notag.png){fig-align="center"}
 :::
 
 ## Land Acknowledgement
@@ -71,9 +71,9 @@ Passive acoustic monitoring was used across Edmonton to document bat presence, s
 
 Edmonton supports a network of urban natural areas, including the North Saskatchewan River valley, connected ravines, wetlands, parks, and developed neighbourhoods. The river valley and ravine system extends for more than 100 km and covers over 7,400 ha, forming one of North America’s largest continuous urban park networks (@CityofEdmonton2024). Together, these interconnected habitats provide bats with a range of foraging and roosting opportunities, including both natural features and human-made structures.
 
-Bats are an important component of urban biodiversity and contribute to ecosystem functions such as insect suppression and nutrient cycling (@kunz2011ecosystem). Alberta supports at least nine bat species, and eight are estimated to occur in Edmonton (Bayne, unpublished data). These include resident and short-distance migratory species, such as little brown bat (*Myotis lucifugus*) and big brown bat (*Eptesicus fuscus*), as well as long-distance migrants such as hoary bat (*Lasiurus cinereus*), eastern red bat (*Lasiurus borealis*), and silver-haired bat (*Lasionycteris noctivagans*). Northern long-eared bat (*Myotis septentrionalis*), a forest-associated species not typically linked with highly urbanized landscapes, has also been confirmed within the city.
+Bats are an important component of urban biodiversity and contribute to ecosystem functions such as insect suppression and nutrient cycling (@kunz2011ecosystem). Alberta supports at least nine bat species, and eight are estimated to occur in Edmonton (Bayne, unpublished data). These include resident and short-distance migratory species, such as little brown bat (*Myotis lucifugus*) and big brown bat (*Eptesicus fuscus*), as well as long-distance migrants such as hoary bat (*Lasiurus cinereus*), eastern red bat (*Lasiurus borealis*), and silver-haired bat (*Lasionycteris noctivagans*). Northern long-eared bat (*Myotis septentrionalis*), a forest-associated species not typically linked with highly urbanized landscapes, has also been confirmed within the city (Cory Olson, pers. comm.).
 
-Bats are difficult to monitor through direct observation because they are nocturnal, highly mobile, and primarily detected through ultrasonic echolocation calls. Autonomous recording units equipped with ultrasonic microphones provide a non-invasive method for monitoring bats over extended periods. By recording echolocation calls across multiple nights, these units document species presence, compare relative activity among locations, and examine temporal activity patterns. Passive acoustic monitoring is widely used in bat-monitoring programs, including the North American Bat Monitoring Program, which supports standardized and coordinated monitoring across North America (@Loeb2015NABatPlan).
+Bats are difficult to monitor through direct observation because they are nocturnal, and highly mobile. Autonomous recording units equipped with ultrasonic microphones provide a non-invasive method for monitoring bats over extended periods. By recording echolocation calls across multiple nights, these units document species presence, compare relative activity among locations, and examine temporal activity patterns. Passive acoustic monitoring is widely used in bat-monitoring programs, including the North American Bat Monitoring Program, which supports standardized and coordinated monitoring across North America (@Loeb2015NABatPlan).
 
 Urban bats may be affected by changes in habitat availability, loss of mature trees and roosting structures, artificial light at night, noise, and other forms of human disturbance. Monitoring bats across Edmonton can therefore provide information on how different species use the city’s connected green spaces and help identify locations that support relatively high levels of activity. In 2024, acoustic recording units were deployed across the City of Edmonton to document bat activity. This report summarizes the processed acoustic data, including the species and species groups detected, activity patterns through the night, and variation among monitoring locations. Although the project was not formally part of the North American Bat Monitoring Program, the study design and reporting approach follow a similar structure and provide a baseline for future bat monitoring in Edmonton.
 
@@ -292,21 +292,21 @@ In 2024, 35 acoustic recording units were deployed between July 15 and August 26
 
 ### Data Processing
 
-Full-spectrum recordings from the sampling period were collected and processed using two automatic classifiers: Kaleidoscope’s Bats of U.S. and Canada 5.7.0 classifier and SonoBat’s Southwest Canada–Prairie classifier. Based on documented species ranges and prior detection data, manual verification efforts focused on the species present at each individual site.
+Full-spectrum recordings from the sampling period were collected and processed using two automatic classifiers: Kaleidoscope’s Bats of U.S. and Canada 5.7.0 classifier and SonoBat’s Southwest Canada–Prairie classifier. Based on documented species ranges and prior detection data, manual verification efforts focused on the species present within the city of Edmonton.
 
-The analysis workflow followed processing standards established by the North American Bat Monitoring Program (NABat) (@reichert2018guide). Only recordings that received automated species classifications from either Kaleidoscope or SonoBat were selected for manual verification. For stationary acoustic monitoring sites, recordings were manually vetted until at least one recording per species per site per night was confidently identified.
+The analysis workflow followed processing standards established by the North American Bat Monitoring Program (NABat) (@reichert2018guide). Only recordings that received automated species classifications from either Kaleidoscope or SonoBat were selected for manual verification. Recordings were manually vetted until at least one recording per species per site per night was confidently identified.
 
 Species identifications were validated using reference call parameters described by Szewczak (@szewczak2022echolocation) and Vesper (@VesperBats2022), in accordance with NABat manual vetting protocols. Species detections were summarized by monitoring location and night. Species codes were grouped into species-level identifications, acoustic groups, and unidentified bat detections. Species-level identifications were used for species richness summaries, while acoustic groups and unidentified detections were retained in summaries of overall bat activity.
 
-All recordings with their associated tags were uploaded to WildTrax under the City of Edmonton bat acoustic monitoring project.
+All recordings with their associated tags were uploaded to WildTrax under the [Bat Community - City of Edmonton](https://portal.wildtrax.ca/aru/4524) project.
 
 ## Results
 
-A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (Figure 1).
+A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (@fig-species).
 
 ```{r}
-#| label: interactive-map
-#| code-summary: "Show interactive map code"
+#| label: fig-interactivemap
+#| fig-cap: "Interactive map of acoustic monitoring locations across Edmonton. Select a site marker to view the number of sampling nights, total bat detections, and species detected at each location."
 #| warning: false
 #| message: false
 #| echo: false
@@ -948,8 +948,6 @@ bat_map <- leaflet(
 bat_map
 ```
 
-A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (Figure 1).
-
 ```{r}
 #| label: fig-species
 #| fig-cap: "Number of processed bat detections by species or acoustic identification group. Bars represent the total number of detections."
@@ -987,7 +985,7 @@ p_species
 
 Migratory species, including silver-haired, hoary, and eastern red bats, accounted for 56.6% of species-level detections, while non-migratory species accounted for 43.4%. Silver-haired bat was the most frequently detected migratory species, while little brown bat was the most frequently detected non-migratory species.
 
-Bat activity varied among monitoring locations. CBAT-CAL-1B had the highest total activity, with 6,094 detections across 10 nights, equivalent to approximately 609 detections per night. CBAT-SHA-1B had the second-highest total, with 4,455 detections across 22 nights. CBAT-QUA-1B and CBAT-HAM-1B also had relatively high activity, averaging approximately 356 and 309 detections per night, respectively (Figure 2). Eight species were identified at CBAT-CAL-1B, CBAT-EST-1B, CBAT-KUC-1B, CBAT-SIL-1B, and CBAT-VIR-1B.
+Bat activity varied among monitoring locations. CBAT-CAL-1B had the highest total activity, with 6,094 detections across 10 nights, equivalent to approximately 609 detections per night. CBAT-SHA-1B had the second-highest total, with 4,455 detections across 22 nights. CBAT-QUA-1B and CBAT-HAM-1B also had relatively high activity, averaging approximately 356 and 309 detections per night, respectively (@fig-sites). Eight species were identified at CBAT-CAL-1B, CBAT-EST-1B, CBAT-KUC-1B, CBAT-SIL-1B, and CBAT-VIR-1B.
 
 ```{r}
 #| label: fig-sites
@@ -1041,99 +1039,28 @@ p_sites <- site_nightly %>%
 p_sites
 ```
 
-Species differed in their activity patterns through the night. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (Figure 3).
+Species differed in their activity patterns through the night. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
 
-```{#| label: fig-night-species}
+```{r}
+#| label: fig-nightspecies 
 #| fig-cap: "Mean hourly bat activity by species between 20:00 and 06:00. Values represent the average number of detections per site-night."
 #| fig-width: 10
 #| fig-height: 7
-#| code-summary: "Show hourly activity code"
+#| code-summary: "Show hourly activity code" 
 #| echo: false
 
-night_hour_key <- tibble(
-  hour = c(20:23, 0:6),
-  hour_plot = 20:30,
-  hour_label = c(
-    "20:00", "21:00", "22:00", "23:00",
-    "00:00", "01:00", "02:00", "03:00",
-    "04:00", "05:00", "06:00"
-  )
-)
+night_hour_key <- tibble( hour = c(20:23, 0:6), hour_plot = 20:30, hour_label = c( "20:00", "21:00", "22:00", "23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00" ) )
 
-sampled_site_nights <- bat_site %>%
-  distinct(location, night)
+sampled_site_nights <- bat_site %>% distinct(location, night)
 
-species_hour_grid <- crossing(
-  species_clean = bat_site %>%
-    filter(species_confidence == "Species-level ID") %>%
-    distinct(species_clean) %>%
-    pull(species_clean),
-  hour = night_hour_key$hour,
-  sampled_site_nights
-)
+species_hour_grid <- crossing( species_clean = bat_site %>% filter(species_confidence == "Species-level ID") %>% distinct(species_clean) %>% pull(species_clean), hour = night_hour_key$hour, sampled_site_nights )
 
-hourly_species <- bat_site %>%
-  filter(
-    species_confidence == "Species-level ID",
-    hour %in% night_hour_key$hour
-  ) %>%
-  count(
-    location,
-    night,
-    species_clean,
-    hour,
-    name = "n"
-  ) %>%
-  right_join(
-    species_hour_grid,
-    by = c("location", "night", "species_clean", "hour")
-  ) %>%
-  mutate(
-    n = replace_na(n, 0L)
-  ) %>%
-  group_by(species_clean, hour) %>%
-  summarise(
-    mean_detections = mean(n),
-    .groups = "drop"
-  ) %>%
-  left_join(
-    night_hour_key,
-    by = "hour"
-  ) %>%
-  arrange(
-    species_clean,
-    hour_plot
-  )
+hourly_species <- bat_site %>% filter( species_confidence == "Species-level ID", hour %in% night_hour_key$hour ) %>% count( location, night, species_clean, hour, name = "n" ) %>% right_join( species_hour_grid, by = c("location", "night", "species_clean", "hour") ) %>% mutate( n = replace_na(n, 0L) ) %>% group_by(species_clean, hour) %>% summarise( mean_detections = mean(n), .groups = "drop" ) %>% left_join( night_hour_key, by = "hour" ) %>% arrange( species_clean, hour_plot )
 
-p_hourly_species <- ggplot(
-  hourly_species,
-  aes(
-    x = hour_plot,
-    y = mean_detections
-  )
-) +
-  geom_line(linewidth = 0.8) +
-  geom_point(size = 1.8) +
-  facet_wrap(
-    ~species_clean,
-    scales = "free_y"
-  ) +
-  scale_x_continuous(
-    breaks = night_hour_key$hour_plot,
-    labels = night_hour_key$hour_label
-  ) +
-  scale_y_continuous(labels = comma) +
-  labs(
-    x = "Hour of night",
-    y = "Mean detections per site-night"
-  ) +
-  theme_bw() +
-  theme(
-    panel.grid.minor = element_blank(),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
+p_hourly_species <- ggplot( hourly_species, aes( x = hour_plot, y = mean_detections ) ) + geom_line(linewidth = 0.8) + geom_point(size = 1.8) + facet_wrap( ~species_clean, scales = "free_y" ) + scale_x_continuous( breaks = night_hour_key$hour_plot,
+                                                                                                                                                                                                                      labels = night_hour_key$hour_label ) + scale_y_continuous(labels = comma) + labs( x = "Hour of night", y = "Mean detections per site-night" ) + theme_bw() + theme( panel.grid.minor = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1) )
 
-p_hourly_species
+p_hourly_species 
 ```
 
 ## Concluding Remarks
