@@ -895,7 +895,8 @@ bat_map <- leaflet(
   width = "100%",
   height = 650,
   options = leafletOptions(
-    minZoom = 9
+    minZoom = 9,
+    maxZoom = 13
   )
 ) %>%
 
