@@ -305,14 +305,8 @@ All recordings with their associated tags were uploaded to WildTrax under the [B
 A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (@fig-species).
 
 ```{r}
-<<<<<<< HEAD
-#| label: interactive-map
+#| label: fig-interactive-map
 #| fig-cap: "Interactive map of acoustic monitoring locations across Edmonton. Select a site marker to view the number of sampling nights, total bat detections, and species detected at each location."
-#| code-summary: "Show interactive map code"
-=======
-#| label: fig-interactivemap
-#| fig-cap: "Interactive map of acoustic monitoring locations across Edmonton. Select a site marker to view the number of sampling nights, total bat detections, and species detected at each location."
->>>>>>> 08581d40aa6131a240530426588a0b0f63091126
 #| warning: false
 #| message: false
 #| echo: false
@@ -914,7 +908,7 @@ bat_map <- leaflet(
 
   addCircleMarkers(
     radius = ~marker_radius,
-    color = ~richness_pal(species_richness),
+    color = "black",  
     fillColor = ~richness_pal(species_richness),
     stroke = TRUE,
     weight = 1,
@@ -1049,13 +1043,8 @@ p_sites
 Species differed in their activity patterns through the night. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
 
 ```{r}
-<<<<<<< HEAD
-#| label: fig-night-species
-#| fig-cap: "Hourly bat activity patterns by species between 20:00 and 06:00. Each panel shows the number of detections recorded by hour for each species."
-=======
 #| label: fig-nightspecies 
 #| fig-cap: "Mean hourly bat activity by species between 20:00 and 06:00. Values represent the average number of detections per site-night."
->>>>>>> 08581d40aa6131a240530426588a0b0f63091126
 #| fig-width: 10
 #| fig-height: 7
 #| code-summary: "Show hourly activity code" 
