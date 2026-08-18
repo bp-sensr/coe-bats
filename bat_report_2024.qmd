@@ -1067,3 +1067,7 @@ p_hourly_species
 ## Concluding Remarks
 
 The 2024 City of Edmonton bat acoustic dataset provides a city-wide summary of bat activity across monitored locations. Multiple bat species were detected across the city, with variation in activity among locations and throughout the night. Because these results are based on processed acoustic detection records, they should be interpreted as measures of relative acoustic activity rather than direct estimates of abundance, population size, or site occupancy. Detection totals may also reflect differences in sampling effort, environmental conditions, and species-specific detectability. Overall, this dataset provides a useful baseline for future bat monitoring in Edmonton.
+
+## Acknowledgements
+
+This data was collected in coordination with many volunteers across the city of Edmonton, who generously lent us their time and allowed us onto their private property to collect bat data. We thank them for the opportunity and for their enthusiasm for urban bat monitoring. Coordination and data collection were led by Anna Lenz, who devoted considerable time to organizing the effort and connecting with volunteers.
