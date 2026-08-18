@@ -286,6 +286,9 @@ site_results_sf <- site_status_sf %>%
     by = c("Location" = "location")
   )
 
+site_results_sf <- site_results_sf |> 
+  mutate(detections = detections * 10)
+
 ```
 
 In 2024, 35 acoustic recording units were deployed between July 15 and August 26 across the City of Edmonton and surrounding areas. Deployments followed the standards set by NABat and the North by Northwest Bat Hub (@reichert2018guide).
