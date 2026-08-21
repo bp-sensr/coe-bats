@@ -993,60 +993,6 @@ p_species
 
 Migratory species, including silver-haired, hoary, and eastern red bats, accounted for 56.6% of species-level detections, while non-migratory species accounted for 43.4%. Silver-haired bat was the most frequently detected migratory species, while little brown bat was the most frequently detected non-migratory species.
 
-Bat activity varied among monitoring locations. CBAT-CAL-1B had the highest total activity, with 6,094 detections across 10 nights, equivalent to approximately 609 detections per night. CBAT-SHA-1B had the second-highest total, with 4,455 detections across 22 nights. CBAT-QUA-1B and CBAT-HAM-1B also had relatively high activity, averaging approximately 356 and 309 detections per night, respectively (@fig-sites). Eight species were identified at CBAT-CAL-1B, CBAT-EST-1B, CBAT-KUC-1B, CBAT-SIL-1B, and CBAT-VIR-1B.
-
-```{r}
-#| label: fig-sites
-#| fig-cap: "Nightly variation in bat detections among the 15 monitoring sites with the highest overall activity. Boxes summarize the distribution across nights, while points represent individual nights."
-#| fig-width: 8
-#| fig-height: 6
-#| code-summary: "Show site boxplot code"
-#| echo: false
-
-top_locations_boxplot <- location_summary %>%
-  slice_max(
-    order_by = detections,
-    n = 15,
-    with_ties = FALSE
-  ) %>%
-  pull(location)
-
-site_nightly <- bat_site %>%
-  filter(location %in% top_locations_boxplot) %>%
-  count(
-    location,
-    night,
-    name = "detections"
-  )
-
-p_sites <- site_nightly %>%
-  ggplot(
-    aes(
-      x = fct_reorder(location, detections, .fun = median),
-      y = detections
-    )
-  ) +
-  geom_boxplot(
-    outlier.shape = NA,
-    width = 0.7
-  ) +
-  geom_jitter(
-    width = 0.15,
-    height = 0,
-    alpha = 0.4,
-    size = 1
-  ) +
-  coord_flip() +
-  scale_y_continuous(labels = comma) +
-  labs(
-    x = NULL,
-    y = "Detections per night"
-  ) +
-  theme_bw()
-
-p_sites
-```
-
 Species differed in their activity patterns through the night. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
 
 ```{r}
