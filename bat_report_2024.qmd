@@ -291,7 +291,6 @@ The analysis workflow followed processing standards established by the North Ame
 
 Species identifications were validated using reference call parameters described by Szewczak (@szewczak2022echolocation) and Vesper (@VesperBats2022), in accordance with NABat manual vetting protocols. Species detections were summarized by monitoring location and night. Species codes were grouped into species-level identifications, acoustic groups, and unidentified bat detections. Species-level identifications were used for species richness summaries, while acoustic groups and unidentified detections were retained in summaries of overall bat activity.
 
-
 ## What Did We Find?
 
 A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (@fig-species).
