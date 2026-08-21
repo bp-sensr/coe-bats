@@ -307,7 +307,7 @@ Species identifications were validated using reference call parameters described
 
 All recordings with their associated tags were uploaded to WildTrax under the [Bat Community - City of Edmonton](https://portal.wildtrax.ca/aru/4524) project.
 
-## Results
+## What Did We Find?
 
 A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (@fig-species).
 
