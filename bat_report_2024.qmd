@@ -53,23 +53,9 @@ load("coe-bats.RData")
 
 ![Bat in an urban environment. Photo: U.S. Fish and Wildlife Service.](usfws_bat.jpg){width="100%"}
 
-## Executive Summary
-
-SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne and Dr. Matina Kalcounis-Rueppell from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data collected in Edmonton in the summer of 2024. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
-
-::: {layout-ncol="2"}
-![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
-
-![](BP-Logo-Hz-notag.png){fig-align="center"}
-:::
-
 ## Land Acknowledgement
 
 Edmonton, ᐊᒥᐢᑿᒌᐚᐢᑲᐦᐃᑲᐣ Amiskwaciwâskahikan, is located within Treaty 6 Territory and within the Métis homelands and Métis Nation of Alberta Region 4. We acknowledge this land as the traditional territories of many First Nations such as the Nehiyaw (Cree), Denesuliné (Dene), Nakota Sioux (Stoney), Anishinaabe (Saulteaux) and Niitsitapi (Blackfoot).
-
-## Study Overview
-
-Passive acoustic monitoring was used across Edmonton to document bat presence, species composition, and patterns of acoustic activity during the summer of 2024. Recordings collected at sites throughout the city detected several bat species and groups, including both resident and migratory species. Bat activity varied among space and time, potentially reflecting differences in habitat conditions, resource availability, and species behaviour. These recordings provide a baseline dataset for understanding the distribution and activity of bats in Edmonton and can support future monitoring of urban bat communities.
 
 ## Introduction
 
