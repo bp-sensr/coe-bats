@@ -1073,4 +1073,4 @@ The 2024 City of Edmonton bat acoustic dataset provides a city-wide summary of b
 
 ## Acknowledgements
 
-This data was collected in coordination with many volunteers across the city of Edmonton, who generously lent us their time and allowed us onto their private property to collect bat data. We thank them for the opportunity and for their enthusiasm for urban bat monitoring. Coordination and data collection were led by Anna Lenz, who devoted considerable time to organizing the effort and connecting with volunteers.
+These data were collected in coordination with many volunteers across the city of Edmonton, who generously lent us their time and allowed us onto their private property to collect bat data. We thank them for the opportunity and for their enthusiasm for urban bat monitoring. Coordination and data collection were led by Anna Lenz, who devoted considerable time to organizing the effort and connecting with volunteers.
