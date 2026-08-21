@@ -53,9 +53,23 @@ load("coe-bats.RData")
 
 ![Bat in an urban environment. Photo: U.S. Fish and Wildlife Service.](usfws_bat.jpg){width="100%"}
 
+## Executive Summary
+
+SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne and Dr. Matina Kalcounis-Rueppell from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data collected in Edmonton in the summer of 2024. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
+
+::: {layout-ncol="2"}
+![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
+
+![](BP-Logo-Hz-notag.png){fig-align="center"}
+:::
+
 ## Land Acknowledgement
 
 Edmonton, ᐊᒥᐢᑿᒌᐚᐢᑲᐦᐃᑲᐣ Amiskwaciwâskahikan, is located within Treaty 6 Territory and within the Métis homelands and Métis Nation of Alberta Region 4. We acknowledge this land as the traditional territories of many First Nations such as the Nehiyaw (Cree), Denesuliné (Dene), Nakota Sioux (Stoney), Anishinaabe (Saulteaux) and Niitsitapi (Blackfoot).
+
+## Study Overview
+
+Passive acoustic monitoring was used across Edmonton to document bat presence, species composition, and patterns of acoustic activity during the summer of 2024. Recordings collected at sites throughout the city detected several bat species and groups, including both resident and migratory species. Bat activity varied among space and time, potentially reflecting differences in habitat conditions, resource availability, and species behaviour. These recordings provide a baseline dataset for understanding the distribution and activity of bats in Edmonton and can support future monitoring of urban bat communities.
 
 ## Introduction
 
@@ -281,15 +295,16 @@ site_results_sf <- site_results_sf |>
 
 ```
 
-In 2024, 35 acoustic recording units were deployed between July 15 and August 26 across the City of Edmonton and surrounding areas. Deployments followed the standards set by NABat and the North by Northwest Bat Hub (@reichert2018guide).
+In 2024, 35 acoustic recording units were placed across Edmonton and surrounding areas between July 15 and August 26. These recorders captured the high-frequency sounds bats use to navigate and find food. Monitoring followed guidelines from the North American Bat Monitoring Program (NABat) and the North by Northwest Bat Hub (@reichert2018guide).
 
-### Data Processing
+##Data Processing
+The recordings were first analyzed using two computer programs, Kaleidoscope and SonoBat, which automatically identify bat calls based on their acoustic characteristics. These programs helped narrow down the recordings that were most likely to contain calls from different bat species.
+Recordings identified by either program were then reviewed manually. Because some bat species have very similar calls, this additional step is important for confirming species identifications. For each monitoring site and night, recordings were reviewed until at least one call from each detected species could be confidently identified.
+Species identifications were checked using published reference information on bat calls (@szewczak2022echolocation; @VesperBats2022) and followed NABat review guidelines. The results were then summarized for each location and night.
+Some recordings could be confidently identified to species, while others could only be assigned to a group of species with similar calls or identified simply as bats. Confirmed species identifications were used to summarize the number of species recorded at each location. All bat detections, including those that could not be identified to a single species, were retained when summarizing overall bat activity.
+All recordings and their associated identifications are stored in WildTrax under the Bat Community - City of Edmonton project.
 
-Full-spectrum recordings from the sampling period were collected and processed using two automatic classifiers: Kaleidoscope’s Bats of U.S. and Canada 5.7.0 classifier and SonoBat’s Southwest Canada–Prairie classifier. Based on documented species ranges and prior detection data, manual verification efforts focused on the species present within the city of Edmonton.
 
-The analysis workflow followed processing standards established by the North American Bat Monitoring Program (NABat) (@reichert2018guide). Only recordings that received automated species classifications from either Kaleidoscope or SonoBat were selected for manual verification. Recordings were manually vetted until at least one recording per species per site per night was confidently identified.
-
-Species identifications were validated using reference call parameters described by Szewczak (@szewczak2022echolocation) and Vesper (@VesperBats2022), in accordance with NABat manual vetting protocols. Species detections were summarized by monitoring location and night. Species codes were grouped into species-level identifications, acoustic groups, and unidentified bat detections. Species-level identifications were used for species richness summaries, while acoustic groups and unidentified detections were retained in summaries of overall bat activity.
 
 ## What Did We Find?
 
