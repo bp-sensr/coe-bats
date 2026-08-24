@@ -1043,7 +1043,9 @@ The data, metadata, analytical R code, maps and report source are available on r
 
 ## Want to learn more? Check these sites out!
 
-[Alberta Community Bat Program](https://www.albertabats.ca) [North American Bat Monitoring Program (NABat)](https://www.nabatmonitoring.org/) [Government of Alberta: Bat management](https://www.alberta.ca/bat-management)
+[Alberta Community Bat Program](https://www.albertabats.ca) 
+[North American Bat Monitoring Program (NABat)](https://www.nabatmonitoring.org/) 
+[Government of Alberta: Bat management](https://www.alberta.ca/bat-management)
 
 ## Acknowledgements
 
