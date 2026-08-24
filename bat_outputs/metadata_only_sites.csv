@@ -1,7 +1,0 @@
-"Location","BAT","latitude","longitude","first_visit_date","last_visit_date","visit_types"
-"CBAT-AUG-2B","AUGUSTANA-2",53.53744,-113.5044,2024-08-26,2024-08-26,"Deployment"
-"CBAT-KIL-1A","KILLARNEY-1A",53.586363,-113.485997,2024-07-15,2024-07-15,"Deployment; Retrieval/Refresh"
-"CBAT-MHA-1A","MHAVEN-1A",53.539709,-113.306535,2024-07-16,2024-07-23,"Deployment; Retrieval/Refresh"
-"CBAT-VIR-1A","VIRGINIA-1A",53.559506,-113.450649,2024-07-15,2024-07-25,"Deployment; Retrieval/Refresh"
-"CBAT-WEI-1A","WEINLOS-1A",53.459423,-113.414312,2024-07-16,2024-07-25,"Deployment; Retrieval/Refresh"
-"CBAT-ZOO-1","ZOO1",53.509312,-113.558838,2024-08-16,2024-08-16,"Deployment"
