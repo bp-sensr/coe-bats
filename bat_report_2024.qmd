@@ -1055,4 +1055,4 @@ These data were collected in coordination with many volunteers across the city o
 
 SENSR (Services for Environmental Sensor Research; [sensr.ca](https://bp-sensr.github.io/coe-bats/sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](https://bp-sensr.github.io/coe-bats/biodiversitypathways.ca)), compiled, processed, and worked alongside Anna Lenz to create this report.
 
-Erin Bayne and Matina Kalcounis-Rueppell provided the funding sources \[insert funding\] that supported the original pilot project. Anna Lenz's PhD is currently supported by a Canada Excellence Research Chair Grant (no. ERC-2022-00074), under the supervision of Malgorzata Lagisz and Shinichi Nakagawa.
+Erin Bayne and Matina Kalcounis-Rueppell provided the funding sources that supported the original pilot project. Anna Lenz's PhD is currently supported by a Canada Excellence Research Chair Grant (no. ERC-2022-00074), under the supervision of Malgorzata Lagisz and Shinichi Nakagawa.
