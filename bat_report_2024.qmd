@@ -1,5 +1,5 @@
 ---
-title: "Bats After Dark"
+title: "Bat Monitoring: City of Edmonton 2024"
 subtite: "A community report from Edmonton, St. Albert and surrounding municipalities"
 format:
  
@@ -55,9 +55,9 @@ load("coe-bats.RData")
 ![Big brown bat. Photo by Jason Headley.](Big%20Brown%20Bat.jpg){width="100%"}
 
 ::: {layout-ncol="2"}
-![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
+![](SENSR_Logo_Left_Tagline_FullColour.png){width="70%" fig-align="center"}
 
-![](cropped-university-logo){fig-align="center"}
+![](cropped-university-logo.png){fig-align="center"}
 :::
 
 ## Land Acknowledgement
