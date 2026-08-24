@@ -51,8 +51,6 @@ load("coe-bats.RData")
 
 ## Executive Summary
 
-SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](biodiversitypathways.ca)), helps researchers and organizations obtain greater value from environmental sensor data. For this project, SENSR worked with Dr. Erin Bayne and Dr. Matina Kalcounis-Rueppell from the Department of Biological Sciences at the University of Alberta to compile, process, and report on acoustic bat-monitoring data collected in Edmonton in the summer of 2024. This report summarizes the monitoring effort and provides an overview of bat species detections and patterns of bat activity across the study area.
-
 ::: {layout-ncol="2"}
 ![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
 
@@ -63,21 +61,12 @@ SENSR (Services for Environmental Sensor Research; [sensr.ca](sensr.ca)), a unit
 
 Edmonton, ᐊᒥᐢᑿᒌᐚᐢᑲᐦᐃᑲᐣ Amiskwaciwâskahikan, is located within Treaty 6 Territory and within the Métis homelands and Métis Nation of Alberta Region 4. We acknowledge this land as the traditional territories of many First Nations such as the Nehiyaw (Cree), Denesuliné (Dene), Nakota Sioux (Stoney), Anishinaabe (Saulteaux) and Niitsitapi (Blackfoot).
 
-## Study Overview
-
-Passive acoustic monitoring was used across Edmonton to document bat presence, species composition, and patterns of acoustic activity during the summer of 2024. Recordings collected at sites throughout the city detected several bat species and groups, including both resident and migratory species. Bat activity varied among space and time, potentially reflecting differences in habitat conditions, resource availability, and species behaviour. These recordings provide a baseline dataset for understanding the distribution and activity of bats in Edmonton and can support future monitoring of urban bat communities.
-
-## Introduction
-
-Edmonton supports a network of urban natural areas, including the North Saskatchewan River valley, connected ravines, wetlands, parks, and developed neighbourhoods. The river valley and ravine system extends for more than 100 km and covers over 7,400 ha, forming one of North America’s largest continuous urban park networks (@CityofEdmonton2024). Together, these interconnected habitats provide bats with a range of foraging and roosting opportunities, including both natural features and human-made structures.
-
-Bats are an important component of urban biodiversity and contribute to ecosystem functions such as insect suppression and nutrient cycling (@kunz2011ecosystem). Alberta supports at least nine bat species, and eight are estimated to occur in Edmonton (Bayne, unpublished data). These include resident and short-distance migratory species, such as little brown bat (*Myotis lucifugus*) and big brown bat (*Eptesicus fuscus*), as well as long-distance migrants such as hoary bat (*Lasiurus cinereus*), eastern red bat (*Lasiurus borealis*), and silver-haired bat (*Lasionycteris noctivagans*). Northern long-eared bat (*Myotis septentrionalis*), a forest-associated species not typically linked with highly urbanized landscapes, has also been confirmed within the city (Cory Olson, pers. comm.).
-
-Bats are difficult to monitor through direct observation because they are nocturnal, and highly mobile. Autonomous recording units equipped with ultrasonic microphones provide a non-invasive method for monitoring bats over extended periods. By recording echolocation calls across multiple nights, these units document species presence, compare relative activity among locations, and examine temporal activity patterns. Passive acoustic monitoring is widely used in bat-monitoring programs, including the North American Bat Monitoring Program, which supports standardized and coordinated monitoring across North America (@Loeb2015NABatPlan).
+## Bats in Alberta and Edmonton
 
 Urban bats may be affected by changes in habitat availability, loss of mature trees and roosting structures, artificial light at night, noise, and other forms of human disturbance. Monitoring bats across Edmonton can therefore provide information on how different species use the city’s connected green spaces and help identify locations that support relatively high levels of activity. In 2024, acoustic recording units were deployed across the City of Edmonton to document bat activity. This report summarizes the processed acoustic data, including the species and species groups detected, activity patterns through the night, and variation among monitoring locations. Although the project was not formally part of the North American Bat Monitoring Program, the study design and reporting approach follow a similar structure and provide a baseline for future bat monitoring in Edmonton.
 
 ## Methods
+## How Did We Do It?
 
 ### Field Deployments
 
@@ -291,19 +280,17 @@ site_results_sf <- site_results_sf |>
 
 ```
 
-In 2024, 35 acoustic recording units were deployed between July 15 and August 26 across the City of Edmonton and surrounding areas. Deployments followed the standards set by NABat and the North by Northwest Bat Hub (@reichert2018guide).
+We placed 34 acoustic recording units across Edmonton and surrounding areas between July 15 and August 26. These recorders captured the high-frequency sounds bats use to navigate and find food. Monitoring followed guidelines from the North American Bat Monitoring Program (NABat) and the North by Northwest Bat Hub (@reichert2018guide).
 
-### Data Processing
+##Data Processing
 
-Full-spectrum recordings from the sampling period were collected and processed using two automatic classifiers: Kaleidoscope’s Bats of U.S. and Canada 5.7.0 classifier and SonoBat’s Southwest Canada–Prairie classifier. Based on documented species ranges and prior detection data, manual verification efforts focused on the species present within the city of Edmonton.
+The recordings were first analyzed using two computer programs, Kaleidoscope and SonoBat, which automatically identify bat calls based on their acoustic characteristics. These programs helped narrow down recordings most likely to contain calls from different bat species. We then reviewed recordings identified by either program manually. Because some bat species have very similar calls, this additional step is important for confirming species identifications.
 
-The analysis workflow followed processing standards established by the North American Bat Monitoring Program (NABat) (@reichert2018guide). Only recordings that received automated species classifications from either Kaleidoscope or SonoBat were selected for manual verification. Recordings were manually vetted until at least one recording per species per site per night was confidently identified.
+For each monitoring site and night, we reviewed recordings until we could confidently identify at least one call from each detected species. Species identifications were checked using published reference information on bat calls (@szewczak2022echolocation; @VesperBats2022) and followed NABat review guidelines.
 
-Species identifications were validated using reference call parameters described by Szewczak (@szewczak2022echolocation) and Vesper (@VesperBats2022), in accordance with NABat manual vetting protocols. Species detections were summarized by monitoring location and night. Species codes were grouped into species-level identifications, acoustic groups, and unidentified bat detections. Species-level identifications were used for species richness summaries, while acoustic groups and unidentified detections were retained in summaries of overall bat activity.
+All recordings and their associated identifications are stored in the [Bat Community - City of Edmonton](https://portal.wildtrax.ca/aru/4524) project.
 
-All recordings with their associated tags were uploaded to WildTrax under the [Bat Community - City of Edmonton](https://portal.wildtrax.ca/aru/4524) project.
-
-## Results
+## What Did We Find?
 
 A total of 35,612 bat detections were recorded across 35 monitoring locations in Edmonton between July 15 and August 26, 2024. Eight species were identified in the processed recordings. Little brown bat was the most frequently identified species, with 5,468 detections, followed by silver-haired bat with 4,683 detections and hoary bat with 4,038 detections. Long-eared myotis was detected least frequently, with 16 detections (@fig-species).
 
@@ -989,61 +976,7 @@ p_species
 
 Migratory species, including silver-haired, hoary, and eastern red bats, accounted for 56.6% of species-level detections, while non-migratory species accounted for 43.4%. Silver-haired bat was the most frequently detected migratory species, while little brown bat was the most frequently detected non-migratory species.
 
-Bat activity varied among monitoring locations. CBAT-CAL-1B had the highest total activity, with 6,094 detections across 10 nights, equivalent to approximately 609 detections per night. CBAT-SHA-1B had the second-highest total, with 4,455 detections across 22 nights. CBAT-QUA-1B and CBAT-HAM-1B also had relatively high activity, averaging approximately 356 and 309 detections per night, respectively (@fig-sites). Eight species were identified at CBAT-CAL-1B, CBAT-EST-1B, CBAT-KUC-1B, CBAT-SIL-1B, and CBAT-VIR-1B.
-
-```{r}
-#| label: fig-sites
-#| fig-cap: "Nightly variation in bat detections among the 15 monitoring sites with the highest overall activity. Boxes summarize the distribution across nights, while points represent individual nights."
-#| fig-width: 8
-#| fig-height: 6
-#| code-summary: "Show site boxplot code"
-#| echo: false
-
-top_locations_boxplot <- location_summary %>%
-  slice_max(
-    order_by = detections,
-    n = 15,
-    with_ties = FALSE
-  ) %>%
-  pull(location)
-
-site_nightly <- bat_site %>%
-  filter(location %in% top_locations_boxplot) %>%
-  count(
-    location,
-    night,
-    name = "detections"
-  )
-
-p_sites <- site_nightly %>%
-  ggplot(
-    aes(
-      x = fct_reorder(location, detections, .fun = median),
-      y = detections
-    )
-  ) +
-  geom_boxplot(
-    outlier.shape = NA,
-    width = 0.7
-  ) +
-  geom_jitter(
-    width = 0.15,
-    height = 0,
-    alpha = 0.4,
-    size = 1
-  ) +
-  coord_flip() +
-  scale_y_continuous(labels = comma) +
-  labs(
-    x = NULL,
-    y = "Detections per night"
-  ) +
-  theme_bw()
-
-p_sites
-```
-
-Species differed in their activity patterns through the night. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
+Species differed in their nighttime activity patterns. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
 
 ```{r}
 #| label: fig-nightspecies 
@@ -1068,5 +1001,19 @@ p_hourly_species
 ```
 
 ## Concluding Remarks
+## What Do These Data Mean?
+
+The 2024 City of Edmonton bat acoustic dataset gives a city-wide picture of where and when bats were active at the locations we monitored. We detected several bat species across the city, and their activity varied from place to place and over the course of each night. These results tell us how much bat activity a recorder picked up, not how many bats live in an area. The number of calls recorded at a site also depends on how long we recorded there, the weather, and how easy each species is to detect, since some bats call more often or more loudly than others. With those limits in mind, this dataset is a valuable starting point for tracking Edmonton's bats over time. Bats change their echolocation calls depending on their surroundings, what they're doing, and which stage of flight they're in, and some species make calls that sound very similar to one another. Because of this, recordings alone can't confirm with certainty which species were present, but they give us a solid basis for taking a closer look. A few things worth keeping in mind when looking at the results: A "detection" is a single recorded call sequence, not a single bat. One bat can create many detections, and many bats can fly past the same recorder. More detections mean more bat activity was recorded at that place and time. They don't tell us how large the population is. A very high number at one site might mean the recorder was near a roost or a route bats regularly use to travel. It doesn't necessarily mean there are lots of bats in the wider area, and a low number doesn't mean bats were absent. Each result reflects only the small area around a single recorder, not the average activity across a whole neighbourhood or region. Recorders were left out for different lengths of time. We account for this by measuring activity per night of recording, but results from sites with fewer recording nights are less certain.
+
+## Data Availability
+
+T
+
+## Want to learn more? Check these sites out!
+
+Alberta Community Bat Program North American Bat Monitoring Program (NABat) Government of Alberta: Bat management
+
+## Acknowledgements
 
 The 2024 City of Edmonton bat acoustic dataset provides a city-wide summary of bat activity across monitored locations. Multiple bat species were detected across the city, with variation in activity among locations and throughout the night. Because these results are based on processed acoustic detection records, they should be interpreted as measures of relative acoustic activity rather than direct estimates of abundance, population size, or site occupancy. Detection totals may also reflect differences in sampling effort, environmental conditions, and species-specific detectability. Overall, this dataset provides a useful baseline for future bat monitoring in Edmonton.
+T
