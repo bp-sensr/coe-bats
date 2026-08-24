@@ -20,10 +20,10 @@ author:
       - "Department of Biological Sciences, University of Alberta"
   - name: "Martin Hinojosa"
     affiliation:
-      - "Biodiversity Pathways Ltd."
+      - "SENSR, Biodiversity Pathways Ltd."
   - name: "Cami Hurtado"
     affiliation:
-      - "Biodiversity Pathways Ltd."
+      - "SENSR, Biodiversity Pathways Ltd."
 editor: visual
 nocite: '@*'
 toc: true
@@ -57,7 +57,7 @@ load("coe-bats.RData")
 ::: {layout-ncol="2"}
 ![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
 
-![](BP-Logo-Hz-notag.png){fig-align="center"}
+![](cropped-university-logo){fig-align="center"}
 :::
 
 ## Land Acknowledgement
