@@ -1,5 +1,7 @@
 ---
 title: "City of Edmonton Bat Monitoring 2024"
+title: "Bats After Dark"
+subtite: "A community report from Edmonton, St. Albert and surrounding municipalities"
 format:
   html:
     grid:
@@ -13,6 +15,9 @@ theme: cosmo
 page-layout: article
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 author: 
+  - name: "Anna Lenz"
+    affiliation:
+      - "Department of Biological Sciences, University of Alberta"
   - name: "Martin Hinojosa"
     affiliation:
       - "Biodiversity Pathways Ltd."
