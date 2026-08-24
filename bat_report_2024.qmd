@@ -52,8 +52,7 @@ load("coe-bats.RData")
 #save.image("coe-bats.RData")
 ```
 
-![Big brown bat. Photo by  Jason Headley.](usfws_bat.jpg){width="100%"}
-
+![Big brown bat. Photo by Jason Headley.](Big%20Brown%20Bat.jpg){width="100%"}
 
 ::: {layout-ncol="2"}
 ![](SENSR_Logo_Left_Tagline_Full%20Colour.png){width="70%" fig-align="center"}
@@ -63,9 +62,7 @@ load("coe-bats.RData")
 
 ## Land Acknowledgement
 
-Edmonton, ᐊᒥᐢᑿᒌᐚᐢᑲᐦᐃᑲᐣ Amiskwaciwâskahikan, is located within Treaty 6 Territory and within the Métis homelands and Métis Nation of Alberta Region 4. This land is part of the traditional territories of many First Nations such as the Nehiyaw (Cree), Denesuliné (Dene), Nakota Sioux (Stoney), Anishinaabe (Saulteaux) and Niitsitapi (Blackfoot).
-We acknowledge the traditional teachings of the lands that we work on, and that reciprocal, meaningful, and respectful relationships with Indigenous peoples make our work possible. We are deeply grateful for their stewardship of these lands, and we are committed to supporting Indigenous-led monitoring programs, while learning Indigenous ways of knowing, being, and doing.
-
+Edmonton, ᐊᒥᐢᑿᒌᐚᐢᑲᐦᐃᑲᐣ Amiskwaciwâskahikan, is located within Treaty 6 Territory and within the Métis homelands and Métis Nation of Alberta Region 4. This land is part of the traditional territories of many First Nations such as the Nehiyaw (Cree), Denesuliné (Dene), Nakota Sioux (Stoney), Anishinaabe (Saulteaux) and Niitsitapi (Blackfoot). We acknowledge the traditional teachings of the lands that we work on, and that reciprocal, meaningful, and respectful relationships with Indigenous peoples make our work possible. We are deeply grateful for their stewardship of these lands, and we are committed to supporting Indigenous-led monitoring programs, while learning Indigenous ways of knowing, being, and doing.
 
 ## Bats in Alberta and Edmonton
 
@@ -81,18 +78,17 @@ Bats are difficult to monitor through direct observation because they are noctur
 
 ## 2024 Bat Monitoring
 
-During summer 2024, we launched a pilot study where community volunteers hosted ultrasonic bat detectors across Edmonton, St. Albert, and surrounding municipalities to contribute to what is known about urban bats in the region and determine whether a larger urban monitoring project would be feasible. 
+During summer 2024, we launched a pilot study where community volunteers hosted ultrasonic bat detectors across Edmonton, St. Albert, and surrounding municipalities to contribute to what is known about urban bats in the region and determine whether a larger urban monitoring project would be feasible.
 
 The results can guide future research into how noise, artificial light at night, habitat and urban green space affect bat activity and presence, and how cities can better protect bats. This report summarizes our findings after processing the acoustic data, including the number of detections, the species and species groups detected, and activity patterns through the night.
 
 Although the project was not formally part of the North American Bat Monitoring Program, the study design and reporting approach follow a similar structure and provide a baseline for future bat monitoring in Edmonton.
 
-
 ## How Did We Do It?
 
 ### Field Deployments
-![Anna Lenz and Autumn Kirk deploying a site in 2024.](usfws_bat.jpg){width="100%"}
 
+![Anna Lenz and Autumn Kirk deploying a site in 2024.](2024_Bat_Fieldwork.png){width="100%"}
 
 ```{r}
 #| label: helper-functions
@@ -308,10 +304,9 @@ We placed 34 acoustic recording units across Edmonton and surrounding areas betw
 
 ##Data Processing
 
-The recordings were first analyzed using two computer programs, Kaleidoscope and SonoBat, which automatically identify bat calls based on their acoustic characteristics. These programs helped narrow down recordings most likely to contain calls from different bat species. We then reviewed recordings identified by either program manually. Because some bat species have very similar calls, this additional step is important for confirming species identifications. 
+The recordings were first analyzed using two computer programs, Kaleidoscope and SonoBat, which automatically identify bat calls based on their acoustic characteristics. These programs helped narrow down recordings most likely to contain calls from different bat species. We then reviewed recordings identified by either program manually. Because some bat species have very similar calls, this additional step is important for confirming species identifications.
 
-For each monitoring site and night, we reviewed recordings until we could confidently identify at least one call from each detected species. Species identifications were checked using published reference information on bat calls (@szewczak2022echolocation; @VesperBats2022) and followed NABat review guidelines. 
-
+For each monitoring site and night, we reviewed recordings until we could confidently identify at least one call from each detected species. Species identifications were checked using published reference information on bat calls (@szewczak2022echolocation; @VesperBats2022) and followed NABat review guidelines.
 
 ## What Did We Find?
 
@@ -1023,14 +1018,13 @@ p_hourly_species <- ggplot( hourly_species, aes( x = hour_plot, y = mean_detecti
 p_hourly_species 
 ```
 
-
 ## What Do These Data Mean?
 
 The 2024 City of Edmonton bat acoustic dataset gives a city-wide picture of where and when bats were active at the locations we monitored. We detected several bat species across the city, and their activity varied from place to place and over the course of each night.
 
 These results tell us how much bat activity a recorder picked up, not how many bats live in an area. The number of calls recorded at a site also depends on how long we recorded there, the weather, and how easy each species is to detect, since some bats call more often or more loudly than others. With those limits in mind, this dataset is a valuable starting point for tracking Edmonton's bats over time.
 
-Bats change their echolocation calls depending on their surroundings, what they're doing, and which stage of flight they're in, and some species make calls that sound very similar to one another. Because of this, recordings alone can't confirm with certainty which species were present,  but they give us a solid basis for taking a closer look.
+Bats change their echolocation calls depending on their surroundings, what they're doing, and which stage of flight they're in, and some species make calls that sound very similar to one another. Because of this, recordings alone can't confirm with certainty which species were present, but they give us a solid basis for taking a closer look.
 
 A few things worth keeping in mind when looking at the results:
 
@@ -1044,16 +1038,13 @@ A few things worth keeping in mind when looking at the results:
 
 All recordings and their associated identifications are stored in the [Bat Community - City of Edmonton](https://portal.wildtrax.ca/aru/4524) project.
 
-The separate protocol for the larger, multi-season study developed from this pilot is available on OSF: [to be added after preregistration].
+The separate protocol for the larger, multi-season study developed from this pilot is available on OSF: \[to be added after preregistration\].
 
 The data, metadata, analytical R code, maps and report source are available on request.
 
-
 ## Want to learn more? Check these sites out!
 
-[Alberta Community Bat Program](https://www.albertabats.ca)
-[North American Bat Monitoring Program (NABat)](https://www.nabatmonitoring.org/)
-[Government of Alberta: Bat management](https://www.alberta.ca/bat-management)
+[Alberta Community Bat Program](https://www.albertabats.ca) [North American Bat Monitoring Program (NABat)](https://www.nabatmonitoring.org/) [Government of Alberta: Bat management](https://www.alberta.ca/bat-management)
 
 ## Acknowledgements
 
@@ -1061,4 +1052,4 @@ These data were collected in coordination with many volunteers across the city o
 
 SENSR (Services for Environmental Sensor Research; [sensr.ca](https://bp-sensr.github.io/coe-bats/sensr.ca)), a unit of Biodiversity Pathways ([biodiversitypathways.ca](https://bp-sensr.github.io/coe-bats/biodiversitypathways.ca)), compiled, processed, and worked alongside Anna Lenz to create this report.
 
-Erin Bayne and Matina Kalcounis-Rueppell provided the funding sources [insert funding] that supported the original pilot project. Anna Lenz's PhD is currently supported by a Canada Excellence Research Chair Grant (no. ERC-2022-00074), under the supervision of Malgorzata Lagisz and Shinichi Nakagawa.
+Erin Bayne and Matina Kalcounis-Rueppell provided the funding sources \[insert funding\] that supported the original pilot project. Anna Lenz's PhD is currently supported by a Canada Excellence Research Chair Grant (no. ERC-2022-00074), under the supervision of Malgorzata Lagisz and Shinichi Nakagawa.
