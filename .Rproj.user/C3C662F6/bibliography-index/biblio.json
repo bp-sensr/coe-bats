@@ -1,0 +1,301 @@
+{
+    "sources": [
+        {
+            "DOI": "10.1111/j.1749-6632.2011.06004.x",
+            "author": [
+                {
+                    "family": "Kunz",
+                    "given": "Thomas H."
+                },
+                {
+                    "family": "Braun de Torrez",
+                    "given": "Elizabeth"
+                },
+                {
+                    "family": "Bauer",
+                    "given": "Dana"
+                },
+                {
+                    "family": "Lobova",
+                    "given": "Tatyana"
+                },
+                {
+                    "family": "Fleming",
+                    "given": "Theodore H."
+                }
+            ],
+            "container-title": "Annals of the New York Academy of Sciences",
+            "id": "kunz2011ecosystem",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "1-38",
+            "title": "Ecosystem services provided by bats",
+            "type": "article-journal",
+            "volume": "1223"
+        },
+        {
+            "author": [
+                {
+                    "family": "Reichert",
+                    "given": "Brian"
+                },
+                {
+                    "family": "Lausen",
+                    "given": "Cori"
+                },
+                {
+                    "family": "Loeb",
+                    "given": "Susan"
+                },
+                {
+                    "family": "Weller",
+                    "given": "Ted"
+                },
+                {
+                    "family": "Allen",
+                    "given": "Ryan"
+                },
+                {
+                    "family": "Britzke",
+                    "given": "Eric"
+                },
+                {
+                    "family": "Hohoff",
+                    "given": "Tara"
+                },
+                {
+                    "family": "Siemers",
+                    "given": "Jeremy"
+                },
+                {
+                    "family": "Burkholder",
+                    "given": "Braden"
+                },
+                {
+                    "family": "Herzog",
+                    "given": "Carl"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "USGS",
+            "id": "reichert2018guide",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "1-43",
+            "title": "A guide to processing bat acoustic data for the north american bat monitoring program (NABat)",
+            "type": "article-journal",
+            "volume": "2018"
+        },
+        {
+            "URL": "https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf",
+            "author": [
+                {
+                    "family": "Szewczak",
+                    "given": "JM"
+                }
+            ],
+            "container-title": "Humboldt State University Bat Lab",
+            "id": "szewczak2022echolocation",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "1-4",
+            "title": "Echolocation call characteristics of eastern north american bats",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://www.batacousticsurveys.com/_files/ugd/a1e0ca_11eef19fd47e4d7cb3684692dd88363c.pdf",
+            "author": [
+                {
+                    "literal": "Vesper Bats"
+                }
+            ],
+            "id": "VesperBats2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Bat acoustic species-pair matrix: Eastern US/Canada",
+            "title-short": "Bat acoustic species-pair matrix",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Reichert",
+                    "given": "Brian"
+                },
+                {
+                    "family": "Lausen",
+                    "given": "Cori"
+                },
+                {
+                    "family": "Loeb",
+                    "given": "Susan"
+                },
+                {
+                    "family": "Weller",
+                    "given": "Ted"
+                },
+                {
+                    "family": "Allen",
+                    "given": "Ryan"
+                },
+                {
+                    "family": "Britzke",
+                    "given": "Eric"
+                },
+                {
+                    "family": "Hohoff",
+                    "given": "Tara"
+                },
+                {
+                    "family": "Siemers",
+                    "given": "Jeremy"
+                },
+                {
+                    "family": "Burkholder",
+                    "given": "Braden"
+                },
+                {
+                    "family": "Herzog",
+                    "given": "Carl"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "USGS",
+            "id": "reichert2018guide",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "1-43",
+            "title": "A guide to processing bat acoustic data for the north american bat monitoring program (NABat)",
+            "type": "article-journal",
+            "volume": "2018"
+        },
+        {
+            "DOI": "10.2737/SRS-GTR-208",
+            "URL": "https://doi.org/10.2737/SRS-GTR-208",
+            "author": [
+                {
+                    "family": "Loeb",
+                    "given": "Susan C."
+                },
+                {
+                    "family": "Rodhouse",
+                    "given": "Thomas J."
+                },
+                {
+                    "family": "Ellison",
+                    "given": "Laura E."
+                },
+                {
+                    "family": "Lausen",
+                    "given": "Cori L."
+                },
+                {
+                    "family": "Reichard",
+                    "given": "Jonathan D."
+                },
+                {
+                    "family": "Irvine",
+                    "given": "Kathryn M."
+                },
+                {
+                    "family": "Ingersoll",
+                    "given": "Thomas E."
+                },
+                {
+                    "family": "Coleman",
+                    "given": "Jeremy T. H."
+                },
+                {
+                    "family": "Thogmartin",
+                    "given": "Wayne E."
+                },
+                {
+                    "family": "Sauer",
+                    "given": "John R."
+                },
+                {
+                    "family": "Francis",
+                    "given": "Charles M."
+                },
+                {
+                    "family": "Bayless",
+                    "given": "Mylea L."
+                },
+                {
+                    "family": "Stanley",
+                    "given": "Thomas R."
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Douglas H."
+                }
+            ],
+            "genre": "General Technical Report",
+            "id": "Loeb2015NABatPlan",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "number": "SRS-208",
+            "page": "100",
+            "publisher": "U.S. Department of Agriculture, Forest Service, Southern Research Station",
+            "publisher-place": "Asheville, North Carolina",
+            "title": "A plan for the north american bat monitoring program (NABat)",
+            "type": "report"
+        },
+        {
+            "URL": "https://www.edmonton.ca/sites/default/files/public-files/ROG-Strategic-Plan-Nov2024.pdf",
+            "author": [
+                {
+                    "literal": "City of Edmonton"
+                }
+            ],
+            "id": "CityofEdmonton2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher": "City of Edmonton",
+            "publisher-place": "Edmonton, Alberta",
+            "title": "Ribbon of green strategic plan",
+            "type": "report"
+        }
+    ],
+    "project_biblios": []
+}
