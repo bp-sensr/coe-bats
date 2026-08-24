@@ -85,10 +85,9 @@ The results can guide future research into how noise, artificial light at night,
 Although the project was not formally part of the North American Bat Monitoring Program, the study design and reporting approach follow a similar structure and provide a baseline for future bat monitoring in Edmonton.
 
 ## How Did We Do It?
+![Anna Lenz and Autumn Kirk deploying a site in 2024.](2024_Bat_Fieldwork.png){width="100%"}
 
 ### Field Deployments
-
-![Anna Lenz and Autumn Kirk deploying a site in 2024.](2024_Bat_Fieldwork.png){width="100%"}
 
 ```{r}
 #| label: helper-functions
@@ -302,7 +301,7 @@ site_results_sf <- site_results_sf |>
 
 We placed 34 acoustic recording units across Edmonton and surrounding areas between July 15 and August 26. These recorders captured the high-frequency sounds bats use to navigate and find food. Monitoring followed guidelines from the North American Bat Monitoring Program (NABat) and the North by Northwest Bat Hub (@reichert2018guide).
 
-##Data Processing
+### Data Processing
 
 The recordings were first analyzed using two computer programs, Kaleidoscope and SonoBat, which automatically identify bat calls based on their acoustic characteristics. These programs helped narrow down recordings most likely to contain calls from different bat species. We then reviewed recordings identified by either program manually. Because some bat species have very similar calls, this additional step is important for confirming species identifications.
 
@@ -957,6 +956,8 @@ bat_map <- leaflet(
 bat_map
 ```
 
+Migratory species, including silver-haired, hoary, and eastern red bats, accounted for 56.6% of species-level detections, while non-migratory species accounted for 43.4%. Silver-haired bat was the most frequently detected migratory species, while little brown bat was the most frequently detected non-migratory species.
+
 ```{r}
 #| label: fig-species
 #| fig-cap: "Number of processed bat detections by species or acoustic identification group. Bars represent the total number of detections."
@@ -991,8 +992,6 @@ p_species <- species_summary %>%
 
 p_species
 ```
-
-Migratory species, including silver-haired, hoary, and eastern red bats, accounted for 56.6% of species-level detections, while non-migratory species accounted for 43.4%. Silver-haired bat was the most frequently detected migratory species, while little brown bat was the most frequently detected non-migratory species.
 
 Species differed in their nighttime activity patterns. Little brown bat and big brown bat showed pronounced peaks at approximately 22:00. Eastern red bat activity was highest between 22:00 and midnight, whereas hoary bat activity peaked later, at approximately 02:00. Silver-haired bat activity remained relatively high from midnight until approximately 04:00. Activity patterns for less frequently detected species were more variable because of the smaller number of detections (@fig-nightspecies).
 
