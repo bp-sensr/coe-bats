@@ -17,7 +17,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 author: 
   - name: "Anna Lenz"
     affiliation:
-      - "Department of Biological Sciences, University of Alberta"
+      - "Bayne Lab, COSSEE, I-DEEL, Department of Biological Sciences, University of Alberta"
   - name: "Martin Hinojosa"
     affiliation:
       - "SENSR, Biodiversity Pathways Ltd."
